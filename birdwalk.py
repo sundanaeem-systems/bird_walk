@@ -8,9 +8,10 @@ from llama_cpp import Llama
 
 SECONDS = 15
 SR = 48000
-MIN_CONF = 0.4          # below this audio confidence, say "not sure"
+MIN_CONF = 0.4           # below this audio confidence, say "not sure"
 GEO_MIN = 0.3            # minimum chance the bird occurs here this week
 LAT, LON = 33.77, 72.36  # Attock
+LOCATION = "Attock"      # only used for display
 WAV = "recording.wav"
 GEMMA = "models/gemma-3-1b-it-Q4_K_M.gguf"
 SPEAK = False            # True = read the result aloud with Piper (optional)
@@ -53,7 +54,7 @@ def local_species():
     week = current_week()
     df = geo.predict(LAT, LON, week=week).to_dataframe()
     df = df[df["confidence"] >= GEO_MIN]
-         print(f"{LOCATION}, week {week}: {len(df)} species possible")
+    print(f"{LOCATION}, week {week}: {len(df)} species possible")
     return dict(zip(df["species_name"], df["confidence"]))
 
 
