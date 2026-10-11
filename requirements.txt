@@ -1,0 +1,10 @@
+--extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+
+birdnet==1.1.1
+sounddevice==0.5.6
+soundfile==0.14.0
+numpy
+llama-cpp-python==0.3.36
+
+# Optional, only for the experimental voice output (SPEAK = True)
+# piper-tts

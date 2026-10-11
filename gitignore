@@ -1,0 +1,17 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Models (too large for GitHub, see README for download)
+models/*.gguf
+
+# Audio recordings
+*.wav
+*.mp3
+*.m4a
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
